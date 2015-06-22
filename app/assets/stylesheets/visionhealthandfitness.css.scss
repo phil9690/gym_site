@@ -338,9 +338,6 @@ p, ul, li {
       line-height: 1.5em;
     }
   }
-  .top-social-icons {
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 920px) {
@@ -376,6 +373,9 @@ p, ul, li {
 }
 
 @media screen and (max-width: 480px) {
+  .top-social-icons {
+    text-align: center;
+  }
   .banner-container {
     a {
       font-size: 0.8em;
