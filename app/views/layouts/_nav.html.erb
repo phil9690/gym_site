@@ -1,0 +1,50 @@
+<div id="nav-wrapper">
+  <div id="logo"></div>
+  <div id="nav">
+    <% if browser.mobile? %>
+      <div class="mobile-social-links">
+        <%= link_to "https://www.facebook.com/VisionHealthFitnessClub", target: "_blank" do %>
+          <i class="fi-social-facebook"></i>
+        <% end %>
+          <i class="fi-social-google-plus"></i>
+        <%= link_to "https://twitter.com/vision_gym", target: "_blank" do %>
+            <i class="fi-social-twitter"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <h2>OPENING HOURS: MON - FRI <span class="span-important"><%= t('opening_hours.monday')  %></span> SAT <span class="span-important"><%= t('opening_hours.saturday')  %></span> SUN <span class="span-important"><%= t('opening_hours.sunday')  %></span></h2>
+      <div class="social-links">
+        <%= link_to "https://twitter.com/vision_gym", target: "_blank" do %>
+          <div class="social-twitter social-slide"></div>
+        <% end %>
+        <%= link_to "https://www.facebook.com/VisionHealthFitnessClub", target: "_blank" do %>
+          <div class="social-facebook social-slide"></div>
+        <% end %>
+        <div class="social-google-plus social-slide"></div>
+      </div>
+    <% end %>
+  </div>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li class=<%= "#{is_active('static_pages', 'home')}" %>><%= link_to "Home", root_path %></li>
+        <li class=<%= "#{is_active('static_pages', 'membership')}" %>><%= link_to "Memberships", membership_path %></li>
+        <li class=<%= "#{is_active('static_pages', 'times')}" %>><%= link_to "Opening Times", opening_times_path %></li>
+        <li class=<%= "#{is_active('static_pages', 'facilties')}" %>><%= link_to "Facilities", gym_facilities_path %></li>
+        <li class="has-dropdown <%= "#{is_active('static_pages', 'classes')}" %>">
+        <%= link_to 'Classes', classes_path %>
+        <ul class="dropdown">
+          <li class=<%= "#{is_active('static_pages', 'boxing')}" %>><%= link_to "Boxing", classes_boxing_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'personal_training')}" %>><%= link_to "Personal Training", personal_training_path %></li>
+        </ul>
+        </li>
+        <li class=<%= "#{is_active('static_pages', 'contact')}" %>><%= link_to "Contact", contact_path %></li>
+      </ul>
+    </section>
+  </nav>
+</div>

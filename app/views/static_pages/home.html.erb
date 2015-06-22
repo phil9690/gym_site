@@ -1,0 +1,52 @@
+<% if browser.mobile? %>
+  <div class="row">
+    <div class="banner-container">
+      <%= image_tag 'banner-small.jpg' %>
+      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius large-2 medium-4 small-10" %>
+    </div>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="banner-container">
+      <%= image_tag 'banner.jpg' %>
+      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius large-2 medium-4 small-10" %>
+    </div>
+  </div>
+<% end %>
+
+<div class="row home-info">
+  <div class="row">
+    <div class="large-7 columns">
+      <h1>Vision Health and Fitness Gateshead</h1>
+      <p>Welcome to Vision Health & Fitness Club, we believe in getting the maximum from your work out and gym experience, that's why we've equipped our gym with state of the art equipment, from Precor CV, to Technogym weights, a huge free weight section and loads of plate loaded machines for the serious weight lifters. At Vision Health & fitness, it doesn't matter if your an experienced trainer or a beginner, with our friendly staff and welcoming gym atmosphere, you will feel  comfortable training in our facility. Classes range from circuit training to boxing training and we have a fully registered amateur & professional boxing club ran from the gym, who knows you might be training with the next world champion! </p>
+    </div>
+    <div class="large-5 columns">
+      <h3>It's easy to join</h3>
+      <p>It really is simple to join, simply click on the link below, input your details and your a member, then simply come and train. (each membership receives a free induction)</p>
+      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius" %>
+    </div>
+  </div>
+  <div class="row offers">
+    <div class="medium-4 columns">
+      <i class="flaticon-building1"></i>
+      <h3><%= link_to "Facilities", gym_facilities_path %></h3>
+      <ul>
+        <li>Large CV area</li>
+        <li>Huge Weights section</li>
+        <li>Studio</li>
+        <li>Boxing Gym</li>
+        <li>Great range of classes</li>
+      </ul>
+    </div>
+    <div class="medium-4 columns">
+      <i class="flaticon-stretching"></i>
+      <h3><%= link_to "Classes", classes_path %></h3>
+      <p>Come try some of our classes, if you want to get fit you won't be disappointed.</p>
+    </div>
+    <div class="medium-4 columns">
+      <i class="flaticon-personal-training"></i>
+      <h3><%= link_to "Personal Training", personal_training_path %></h3>
+      <p>We have a number of highly dedicated personal trainers who consistently achieve great results with their clients.</p>
+    </div>
+  </div>
+</div>

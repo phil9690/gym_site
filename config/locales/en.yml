@@ -1,0 +1,34 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  contact_details:
+    email: "memberships@visionhealthandfitness.co.uk"
+    phone: "0191 447 6919"
+
+  opening_hours:
+    monday:     "7:00 AM - 9:00 PM"
+    tuesday:    "7:00 AM - 9:00 PM"
+    wednesday:  "7:00 AM - 9:00 PM"
+    thursday:   "7:00 AM - 9:00 PM"
+    friday:     "7:00 AM - 9:00 PM"
+    saturday:   "8:00 AM - 5:00 PM"
+    sunday:     "9:00 AM - 2:00 PM"

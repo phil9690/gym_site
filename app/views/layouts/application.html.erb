@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Vision Health and Fitness Gateshead" %></title>
+    
+    <%= javascript_include_tag "vendor/modernizr", defer: true %>
+    <%= csrf_meta_tags %>
+    <script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+            fbds.async = true;
+                fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                    var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(fbds, s);
+                            _fbq.loaded = true;
+                              }
+                              })();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6008198822987', {'value':'0.00','currency':'GBP'}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6008198822987&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
+    <script>
+window.onload = function() {
+var loadTime = window.performance.timing.domContentLoadedEventEnd- window.performance.timing.navigationStart;
+}
+  </script>
+    </head>
+
+  <body>
+    <%= render 'layouts/nav' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+
+  <script type="text/javascript">
+    function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "fonts.js";
+    document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+  </script>
+
+  </body>
+</html>
