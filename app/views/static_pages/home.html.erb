@@ -53,8 +53,13 @@
 
 <script>
   var homeBannerJoinButton = document.getElementById('homeBannerJoin');
-  addEventListener(homeBannerJoinButton, 'click', function() {
+  addListener(homeBannerJoinButton, 'click', function() {
     ga('send', 'event', 'button', 'click', 'home-banner-join');
-  });
+    });
+
+  function addListener(element, type, callback) {
+    if (element.addEventListener) element.addEventListener(type, callback);
+    else if (element.attachEvent) element.attachEvent('on' + type, callback);
+  }
 </script>
 
