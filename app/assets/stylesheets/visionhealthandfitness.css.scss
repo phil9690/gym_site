@@ -60,6 +60,7 @@ p, ul, li {
   }
   img {
     margin: 0 auto;
+    display: block;
   }
   h2 {
     display: inline-block;
@@ -81,8 +82,7 @@ p, ul, li {
 }
 
 .top-social-icons {
-  display: inline-block;
-  text-align: right;
+  text-align: center;
   a:before {
     font-size: 3em;
   }
