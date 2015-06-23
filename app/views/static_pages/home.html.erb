@@ -9,7 +9,7 @@
   <div class="row">
     <div class="banner-container">
       <%= image_tag 'banner.jpg' %>
-      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius large-2 medium-4 small-10", id: "homeBannerJoin" %>
+      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius large-2 medium-4 small-10", onClick: "ga('send', 'event', 'button', 'click', 'home-banner-join');" %>
     </div>
   </div>
 <% end %>
@@ -50,16 +50,4 @@
     </div>
   </div>
 </div>
-
-<script>
-  var homeBannerJoinButton = document.getElementById('homeBannerJoin');
-  addListener(homeBannerJoinButton, 'click', function() {
-    ga('send', 'event', 'button', 'click', 'home-banner-join');
-    });
-
-  function addListener(element, type, callback) {
-    if (element.addEventListener) element.addEventListener(type, callback);
-    else if (element.attachEvent) element.attachEvent('on' + type, callback);
-  }
-</script>
 
