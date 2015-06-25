@@ -9,7 +9,7 @@
   <div class="row">
     <div class="banner-container">
       <%= image_tag 'banner.jpg' %>
-      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius large-2 medium-4 small-10", onClick: "ga('send', 'event', 'button', 'click', 'home-banner-join');" %>
+      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius large-2 medium-4 small-10", onClick: "ga('send', 'event', 'button', 'click', 'home-banner-join', {'nonInteraction': 1});" %>
     </div>
   </div>
 <% end %>
@@ -23,7 +23,7 @@
     <div class="large-5 columns">
       <h3>It's easy to join</h3>
       <p>It really is simple to join, simply click on the link below, input your details and your a member, then simply come and train. (each membership receives a free induction)</p>
-      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius", onClick: "ga('send', 'event', 'button', 'click', 'home-content-join');" %>
+      <%= link_to "Join Now", "https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X", target: "_blank", class: "button radius", onClick: "ga('send', 'event', 'button', 'click', 'home-content-join', {'nonInteraction': 1});" %>
     </div>
   </div>
   <div class="row offers">
