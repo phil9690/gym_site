@@ -4,6 +4,7 @@ gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'browser'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem "dynamic_sitemaps"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

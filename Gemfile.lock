@@ -75,6 +75,7 @@ GEM
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     debug_inspector (0.0.2)
+    dynamic_sitemaps (2.0.0)
     erubis (2.7.0)
     execjs (2.5.2)
     ffi (1.9.8)
@@ -184,6 +185,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   compass-rails!
+  dynamic_sitemaps
   foundation-icons-sass-rails
   foundation-rails
   jbuilder (~> 2.0)
