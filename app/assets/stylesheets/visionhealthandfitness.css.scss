@@ -348,6 +348,13 @@ p, ul, li {
   }
 }
 
+.clearing-thumbs {
+  img {
+    padding: 0.5em;
+    float: left;
+  }
+}
+
 // Media queries
 
 @media screen and (max-width: 1024px) {
