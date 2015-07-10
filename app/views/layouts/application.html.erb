@@ -6,6 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Vision Health and Fitness Gateshead" %></title>
     
+    <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr", defer: true %>
     <%= csrf_meta_tags %>
     <script>
@@ -78,8 +79,7 @@
     <%= render 'layouts/nav' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 
   <script type="text/javascript">
     function downloadJSAtOnload() {
