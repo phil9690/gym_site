@@ -18,4 +18,5 @@
 
 $(document).on('ready page:load', function () {
 $(document).foundation();
+$('.classTimetable').ReStable();
 });
