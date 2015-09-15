@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'customers/new'
+
+  get 'customers/create'
+
+  get 'customers/edit'
+
+  get 'customers/update'
+
+  get 'customers/destroy'
+
   root 'static_pages#home'
 
   get 'membership' => 'static_pages#membership'
