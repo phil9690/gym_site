@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pry'
+gem 'bcrypt'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'browser'

@@ -1,0 +1,14 @@
+<div class="row employee-index-header">
+  <div class="small-12 columns">
+    <h3>Appointments</h3>
+  </div>
+</div>
+<div class="row employee-list">
+  <div class="small-12 columns">
+    <ul>
+      <% @appointments.each do |appointment| %>
+        <li><%= link_to "#{appointment.customer.last_name} #{appointment.customer.first_name}", backend_appointment_path(appointment) %></li>
+    <% end %>
+  </ul>
+  </div>
+</div>

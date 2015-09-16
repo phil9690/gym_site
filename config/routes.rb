@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
-  get 'customers/new'
 
-  get 'customers/create'
+  # Admin backend
+  namespace :backend do
+    #get '', to: 'dashboard#index', as: '/'
+    resources :users do
+      resources :appointments
+    end
+    resources :customers do
+      resources :appointments
+    end
+    resources :appointments
 
-  get 'customers/edit'
+  end
 
-  get 'customers/update'
+  get    'login'   => 'backend/sessions#new'
+  post   'login'   => 'backend/sessions#create'
+  delete 'logout'  => 'sessions#destroy'
 
-  get 'customers/destroy'
 
   root 'static_pages#home'
 

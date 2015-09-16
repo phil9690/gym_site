@@ -1,0 +1,23 @@
+<div id="nav-wrapper">
+  <div id="nav" class="row">
+  <div class="small-12 columns">
+    <img src="http://www.visionhealthandfitness.co.uk/logo-small.png" alt="Vision Health and Fitness logo">
+  </div>
+    
+  </div>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li class=<%= "#{is_active('static_pages', 'home')}" %>><%= link_to "Home", root_path %></li>
+        <li class=<%= "#{is_active('customers', 'index')}" %>><%= link_to "Customers", backend_customers_path %></li>
+        <li class=<%= "#{is_active('static_pages', 'times')}" %>><%= link_to "Users", backend_users_path %></li>
+        <li class=<%= "#{is_active('static_pages', 'facilties')}" %>><%= link_to "Appointments", backend_appointments_path %></li>
+      </ul>
+    </section>
+  </nav>
+</div>

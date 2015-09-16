@@ -1,0 +1,24 @@
+<p>First name: <%= @customer.first_name %></p>
+<p>Last name: <%= @customer.last_name %></p>
+<p>Address Line 1: <%= @customer.address_line_1 %></p>
+<p>Address Line 2: <%= @customer.address_line_2 %></p>
+<p>Address Line 3: <%= @customer.address_line_3 %></p>
+<p>Post Code: <%= @customer.post_code %></p>
+<p>Phone Number: <%= @customer.telephone_number %></p>
+<p>Mobile Number: <%= @customer.mobile_number %></p>
+<p>Email: <%= @customer.email %></p>
+<p>Staff log: <%= @customer.staff_log %></p>
+
+<% @appointments.each do |appointment| %>
+  <div class="panel radius grey">
+    <h4>Appointment</h4>
+  <p>Date: <%= appointment.appointment_date.strftime("%d/%m/%Y") %></p>
+  <p>Time: <%= appointment.appointment_date.strftime("%H:%M:%S") %></p>
+  <p>With: <%= appointment.user.first_name %> <%= appointment.user.last_name %></p>
+</div>
+<% end %>
+
+<%= link_to 'Make appointment', new_backend_customer_appointment_path(@customer), class: "button radius btn-green" %>
+<%= link_to 'Edit Details', edit_backend_customer_path(@customer), class: "button radius btn-green" %>
+<%= link_to 'Delete Customer', backend_customer_path(@customer), method: :delete, data: { confirm: 'Sure?'}, class: "button radius btn-green" %>
+

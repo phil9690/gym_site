@@ -1,0 +1,25 @@
+<%= form_for [:backend, @customer, @customer.appointments.build] do |f| %>
+
+  <% if @appointment.errors.any? %>
+    <p>The form contains <%= pluralize(@appointment.errors.count, "error") %>.</p>
+  <ul>
+    <% @appointment.errors.full_messages.each do |msg| %>
+      <div class="errors">
+        <li><%= msg %></li>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= f.label :appointment_date %>
+<%= f.date_field :appointment_date %>
+
+<%= f.label :appointment_date, "Appointment time" %>
+<%= f.time_field :appointment_date %>
+
+<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<%= f.submit "Submit", data: { disable_with: "Saving..." }, class: "button radius" %>
+
+<% end %>
+

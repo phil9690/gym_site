@@ -1,0 +1,47 @@
+<%= form_for [:backend, @customer] do |f| %>
+
+  <% if @customer.errors.any? %>
+    <p>The form contains <%= pluralize(@customer.errors.count, "error") %>.</p>
+  <ul>
+    <% @customer.errors.full_messages.each do |msg| %>
+      <div class="errors">
+        <li><%= msg %></li>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+
+<%= f.label :address_line_1 %>
+<%= f.text_field :address_line_1 %>
+
+<%= f.label :address_line_2 %>
+<%= f.text_field :address_line_2 %>
+
+<%= f.label :address_line_3 %>
+<%= f.text_field :address_line_3 %>
+
+<%= f.label :post_code %>
+<%= f.text_field :post_code %>
+
+<%= f.label :telephone_number %>
+<%= f.number_field :telephone_number %>
+
+<%= f.label :mobile_number %>
+<%= f.number_field :mobile_number %>
+
+<%= f.label :email %>
+<%= f.email_field :email %>
+
+<%= f.label :staff_log %>
+<%= f.select :staff_log, options_for_select(Customer::STAFF_LOG) %>
+
+
+<%= f.submit "Submit", data: { disable_with: "Saving..." }, class: "button radius" %>
+
+<% end %>
