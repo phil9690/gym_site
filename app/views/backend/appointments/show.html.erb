@@ -1,4 +1,7 @@
-<%= @appointment.customer.first_name %>
-<%= @appointment.customer.last_name %>
-<%= @appointment.appointment_date %>
+<div class="panel radius grey">
+  <h4>Appointment with <%= @appointment.customer.first_name%> <%= @appointment.customer.last_name %></h4>
+  <p>Date: <%= @appointment.appointment_date.strftime("%d/%m/%Y") %></p>
+  <p>Time: <%= @appointment.appointment_date.strftime("%H:%M:%S") %></p>
+  <p>With: <%= @appointment.user.first_name %> <%= @appointment.user.last_name %></p>
+</div>
 
