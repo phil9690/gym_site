@@ -1,8 +1,18 @@
 class Backend::AppointmentsController < Backend::BackendController
 
+  include AppointmentsHelper
+  include ApplicationHelper
+
+
   def index
-    @appointments = Appointment.all
+    if params[:appointment_date]
+      @appointments = Appointment.search([params[:appointment_date]])
+    else
+      @appointments = Appointment.all
+      #@customers = @customers.order("created_at DESC")
+    end
   end
+
   
   def new
     @customer = Customer.find(params[:customer_id])
@@ -12,6 +22,7 @@ class Backend::AppointmentsController < Backend::BackendController
   def create
     @customer = Customer.find(params[:customer_id])
     @appointment = @customer.appointments.new(appointment_params)
+    @appointment.appointment_date = appointment_date_time(params)
     if @appointment.save
       redirect_to backend_appointment_path(@appointment)
     else
@@ -30,7 +41,6 @@ class Backend::AppointmentsController < Backend::BackendController
   end
 
   def update
-    binding.pry
     @appointment = Appointment.find(params[:id])
     #@customer = Customer.find(params[:customer_id])
     #@appointment = @customer.events.find(params[:id])

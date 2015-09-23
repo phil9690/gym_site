@@ -6,6 +6,33 @@
  *= require_tree .
  *= require_self
 */
+
+$green: #2ecc71;
+$red: #e74c3c;
+$orange: #f39c12;
+$blue: #3498db;
+$purple: #9b59b6;
+
+.red {
+  background: $red;
+}
+
+.blue {
+  background: $blue;
+}
+
+.green {
+  background: $green;
+}
+
+.orange {
+  background: $orange;
+}
+
+.purple {
+  background: $purple;
+}
+
 .row {
   width: 100%;
   margin-left: auto;

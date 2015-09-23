@@ -3,12 +3,40 @@
     <h3>Appointments</h3>
   </div>
 </div>
-<div class="row employee-list">
+
+<div class="row employee-search">
   <div class="small-12 columns">
-    <ul>
-      <% @appointments.each do |appointment| %>
-        <li><%= link_to "#{appointment.customer.last_name} #{appointment.customer.first_name}", backend_appointment_path(appointment) %></li>
-    <% end %>
-  </ul>
+    <%= form_tag("/backend/appointments", method: "get", id: "search-form") do %>
+      <div class="small-5 columns">
+      <%= label_tag(:appointment_date, "Appointment Date") %>
+      <%= date_field_tag(:appointment_date) %>
+    </div>
+    <div class="small-12 columns">
+      <%= submit_tag "Search", class: "button small radius" %>
+      <%= link_to "Clear", backend_appointments_path, class: "button small radius" %>
+    </div>
+  <% end %>
   </div>
+</div>
+
+
+<div class="appointment-list">
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+      <td><%= link_to "#{appointment.customer.last_name} #{appointment.customer.first_name}", backend_appointment_path(appointment) %></td>
+      <td class="<%= "#{appointment_time_indicator(appointment)}" %>"> <%= appointment.appointment_date.strftime("%d/%m/%Y") %></td>
+      <td><%= appointment.appointment_date.strftime("%H:%M:%S") %></td>
+    </tr>
+  <% end %>
+    </tbody>
+  </table>
 </div>

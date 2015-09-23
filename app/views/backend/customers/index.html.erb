@@ -1,15 +1,62 @@
-<div class="row employee-index-header">
+<div class="row customer-index-header">
   <div class="small-12 columns">
     <h3>Customers</h3>
   </div>
 </div>
+<div class="row">
 <%= link_to "New customer", new_backend_customer_path, class: "button radius" %>
-<div class="row employee-list">
+</div>
+<div class="row customer-search">
   <div class="small-12 columns">
-    <ul>
-      <% @customers.each do |customer| %>
-        <li><%= link_to "#{customer.last_name} #{customer.first_name}", backend_customer_path(customer) %></li>
-    <% end %>
-  </ul>
+    <%= form_tag("/backend/customers", method: "get", id: "search-form") do %>
+      <div class="small-6 columns">
+      <%= label_tag(:first_name, "First Name") %>
+      <%= text_field_tag(:first_name) %>
+    </div>
+    <div class="small-6 columns">
+      <%= label_tag(:last_name, "Surname") %>
+      <%= text_field_tag(:last_name) %>
+    </div>
+    <div class="small-6 columns">
+      <%= label_tag(:phone_number, "Phone Number") %>
+      <%= text_field_tag(:phone_number) %>
+    </div>
+     <div class="small-6 columns">
+      <%= label_tag(:mobile_number, "Mobile Number") %>
+      <%= text_field_tag(:mobile_number) %>
+    </div>
+    <div class="small-6 columns">
+<%= label_tag(:staff_log, "Staff Log") %>
+<%= select_tag(:staff_log, options_for_select(Customer::STAFF_LOG)) %>
+
+
+    </div>
+  <div class="small-12 columns">
+      <%= submit_tag "Search", class: "button small radius" %>
+      <%= link_to "Clear", backend_customers_path, class: "button small radius" %>
+    </div>
+  <% end %>
   </div>
+</div>
+
+
+<div class="customer-list">
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone number</th>
+        <th>Staff log</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+      <td><%= link_to "#{customer.last_name} #{customer.first_name}", backend_customer_path(customer) %></td>
+      <td><%= customer_tel(customer) %></td>
+      <td class="<%= appointment_time_indicator_customer(customer) %>"><%= customer.staff_log %></td>
+    </tr>
+  <% end %>
+    </tbody>
+  </table>
 </div>

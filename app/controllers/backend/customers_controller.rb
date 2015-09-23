@@ -1,8 +1,12 @@
 class Backend::CustomersController < Backend::BackendController
 
   def index
+    if params[:first_name] || params[:last_name] || params[:phone_number] || params[:mobile_number] || params[:staff_log]
+      @customers = Customer.search([params[:first_name], params[:last_name], params[:phone_number], params[:mobile_number], params[:staff_log]]).order("last_name DESC")
+    else
       @customers = Customer.all
       @customers = @customers.order("created_at DESC")
+    end
   end
 
   def new
