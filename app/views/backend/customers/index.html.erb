@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="row">
-<%= link_to "New customer", new_backend_customer_path, class: "button radius" %>
+  <%= link_to "New customer", new_backend_customer_path, class: "button radius" %>
 </div>
 <div class="row customer-search">
   <div class="small-12 columns">
@@ -21,17 +21,19 @@
       <%= label_tag(:phone_number, "Phone Number") %>
       <%= text_field_tag(:phone_number) %>
     </div>
-     <div class="small-6 columns">
+    <div class="small-6 columns">
       <%= label_tag(:mobile_number, "Mobile Number") %>
       <%= text_field_tag(:mobile_number) %>
     </div>
     <div class="small-6 columns">
-<%= label_tag(:staff_log, "Staff Log") %>
-<%= select_tag(:staff_log, options_for_select(Customer::STAFF_LOG)) %>
-
-
+      <%= label_tag(:staff_log, "Staff Log") %>
+      <%= select_tag(:staff_log, options_for_select(Customer::STAFF_LOG)) %>
     </div>
-  <div class="small-12 columns">
+    <div class="small-6 columns">
+      <%= label_tag(:address_line_1, "Address Line 1") %>
+      <%= text_field_tag(:address_line_1) %>
+    </div>
+    <div class="small-12 columns">
       <%= submit_tag "Search", class: "button small radius" %>
       <%= link_to "Clear", backend_customers_path, class: "button small radius" %>
     </div>

@@ -20,6 +20,7 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
     scope = scope.where("telephone_number like ?", "%#{search[2]}%") unless search[2].empty?
     scope = scope.where("mobile_number like ?", "%#{search[3]}%") unless search[3].empty?
     scope = scope.where("staff_log like ?", "%#{search[4]}%") unless search[4].empty?
+    scope = scope.where("address_line_1 like ?", "%#{search[5]}%") unless search[5].empty?
     scope
   end
 
