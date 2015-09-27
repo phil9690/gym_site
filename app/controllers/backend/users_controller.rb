@@ -1,5 +1,7 @@
 class Backend::UsersController < Backend::BackendController
 
+  before_action :logged_in_user
+
   def index
     @users = User.all.order(last_name: :asc)
   end

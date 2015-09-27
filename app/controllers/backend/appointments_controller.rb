@@ -4,6 +4,8 @@ class Backend::AppointmentsController < Backend::BackendController
   include ApplicationHelper
 
 
+  before_action :logged_in_user
+
   def index
     if params[:appointment_date]
       @appointments = Appointment.search([params[:appointment_date]])

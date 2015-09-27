@@ -1,5 +1,8 @@
 class Backend::CustomersController < Backend::BackendController
 
+
+  before_action :logged_in_user
+
   def index
     if params[:first_name] || params[:last_name] || params[:phone_number] || params[:mobile_number] || params[:staff_log] || params[:address_line_1]
       @customers = Customer.search([params[:first_name], params[:last_name], params[:phone_number], params[:mobile_number], params[:staff_log], params[:address_line_1]]).order("last_name DESC")
