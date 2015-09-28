@@ -10,7 +10,7 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
 
   validates :first_name, :last_name, :address_line_1, :post_code, presence: true
 
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
 
   def self.search(search)
