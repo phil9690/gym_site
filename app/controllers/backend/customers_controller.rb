@@ -56,7 +56,7 @@ class Backend::CustomersController < Backend::BackendController
   private
 
     def customer_params
-      params.require(:customer).permit(:first_name, :last_name, :address_line_1, :address_line_2, :address_line_3, :post_code, :telephone_number, :mobile_number, :email, :staff_log)
+      params.require(:customer).permit(:first_name, :last_name, :dob, :address_line_1, :address_line_2, :address_line_3, :post_code, :telephone_number, :mobile_number, :email, :staff_log, :notes)
     end
 
 end

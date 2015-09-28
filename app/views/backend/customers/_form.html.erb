@@ -17,6 +17,9 @@
 <%= f.label :last_name %>
 <%= f.text_field :last_name %>
 
+<%= f.label :dob %>
+<%= f.date_field :dob %>
+
 <%= f.label :address_line_1 %>
 <%= f.text_field :address_line_1 %>
 
@@ -41,6 +44,8 @@
 <%= f.label :staff_log %>
 <%= f.select :staff_log, options_for_select(Customer::STAFF_LOG) %>
 
+<%= f.label :notes %>
+<%= f.text_area :notes %>
 
 <%= f.submit "Submit", data: { disable_with: "Saving..." }, class: "button radius" %>
 
