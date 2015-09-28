@@ -5,3 +5,4 @@
   <p>With: <%= @appointment.user.first_name %> <%= @appointment.user.last_name %></p>
 </div>
 
+<%= link_to "Edit", edit_backend_appointment_path(@appointment), class: "button radius" %>

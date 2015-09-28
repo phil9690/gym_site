@@ -14,6 +14,9 @@
 <%= f.label :appointment_date %>
 <%= f.date_field :appointment_date %>
 
+<%= f.label :appointment_time, "Appointment time" %>
+<%= f.time_field :appointment_time %>
+
 <%= f.hidden_field :user_id, :value => current_user.id %>
 
 <%= f.submit "Submit", data: { disable_with: "Saving..." }, class: "button radius" %>

@@ -33,9 +33,9 @@ class Backend::AppointmentsController < Backend::BackendController
   end
 
   def edit
-    @customer = Customer.find(params[:customer_id])
-    @appointment = @customer.appointments.find(params[:id])
-    #@appointment = Appointment.find(params[:id])
+    #@customer = Customer.find(params[:customer_id])
+    #@appointment = @customer.appointments.find(params[:id])
+    @appointment = Appointment.find(params[:id])
   end
 
   def show
@@ -47,6 +47,8 @@ class Backend::AppointmentsController < Backend::BackendController
     #@customer = Customer.find(params[:customer_id])
     #@appointment = @customer.events.find(params[:id])
     if @appointment.update_attributes(appointment_params)
+      @appointment.appointment_date = appointment_date_time(params)
+      @appointment.save!
       redirect_to backend_appointment_path(@appointment)
     else
       render 'edit'
