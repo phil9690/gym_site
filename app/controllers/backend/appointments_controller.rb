@@ -55,9 +55,14 @@ class Backend::AppointmentsController < Backend::BackendController
     end
  
   end
-  
+
   def destroy
-  end 
+    @appointment = Appointment.find(params[:id])
+    if @appointment.destroy
+      redirect_to backend_appointments_path
+    end
+  end
+
 
   private
 

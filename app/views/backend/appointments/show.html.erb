@@ -6,3 +6,4 @@
 </div>
 
 <%= link_to "Edit", edit_backend_appointment_path(@appointment), class: "button radius" %>
+<%= link_to 'Delete', backend_appointment_path(@appointment), method: :delete, data: { confirm: 'Sure?'}, class: "button radius" %>
