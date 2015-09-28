@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get    'login'   => 'backend/sessions#new'
   post   'login'   => 'backend/sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  delete 'logout'  => 'backend/sessions#destroy'
 
 
   root 'static_pages#home'
