@@ -11,6 +11,7 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
   before_save { address_line_2.downcase! }
 
   validates :first_name, :last_name, :address_line_1, :post_code, presence: true
+  validates :mobile_number, length: { is: 11 }, allow_blank: :true
 
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
@@ -38,5 +39,6 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
         end
       end
   end
+
 
 end
