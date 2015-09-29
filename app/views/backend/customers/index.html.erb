@@ -5,6 +5,8 @@
 </div>
 <div class="row">
   <%= link_to "New customer", new_backend_customer_path, class: "button radius" %>
+  <%= link_to "Mobile Merge", backend_customers_export_mobile_path(format: "csv"), class: "button radius" %>
+
 </div>
 <div class="row customer-search">
   <div class="small-12 columns">
@@ -32,6 +34,10 @@
     <div class="small-6 columns">
       <%= label_tag(:address_line_1, "Address Line 1") %>
       <%= text_field_tag(:address_line_1) %>
+    </div>
+    <div class="small-6 columns">
+      <%= label_tag(:dob, "Date of birth") %>
+      <%= date_field_tag(:dob) %>
     </div>
     <div class="small-12 columns">
       <%= submit_tag "Search", class: "button small radius" %>

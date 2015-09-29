@@ -4,8 +4,8 @@ class Backend::CustomersController < Backend::BackendController
   before_action :logged_in_user
 
   def index
-    if params[:first_name] || params[:last_name] || params[:phone_number] || params[:mobile_number] || params[:staff_log] || params[:address_line_1]
-      @customers = Customer.search([params[:first_name], params[:last_name], params[:phone_number], params[:mobile_number], params[:staff_log], params[:address_line_1]]).order("last_name DESC")
+    if params[:first_name] || params[:last_name] || params[:phone_number] || params[:mobile_number] || params[:staff_log] || params[:address_line_1] || params[:dob]
+      @customers = Customer.search([params[:first_name], params[:last_name], params[:phone_number], params[:mobile_number], params[:staff_log], params[:address_line_1], params[:dob]]).order("last_name DESC")
     else
       @customers = Customer.all
       @customers = @customers.order("created_at DESC")
@@ -50,7 +50,14 @@ class Backend::CustomersController < Backend::BackendController
     @customer.destroy
 
     redirect_to backend_customers_path
+  end
 
+  def export_mobile
+    @data = Customer.all.order(:created_at)
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.csv { send_data @data.to_csv }
+    end
   end
 
   private

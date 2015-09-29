@@ -1,5 +1,7 @@
 class Customer < ActiveRecord::Base
 
+  require 'csv'
+
 STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "email sent", "converted", "not now" ]
 
   before_save { first_name.downcase! }
@@ -21,8 +23,16 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
     scope = scope.where("mobile_number like ?", "%#{search[3]}%") unless search[3].empty?
     scope = scope.where("staff_log like ?", "%#{search[4]}%") unless search[4].empty?
     scope = scope.where("address_line_1 like ?", "%#{search[5]}%") unless search[5].empty?
+    scope = scope.where("dob like ?", "%#{search[6]}%") unless search[6].empty?
     scope
   end
 
+  def self.to_csv(options = {})
+      CSV.generate(options) do |csv|
+        all.each do |customer|
+          csv << [customer.mobile_number]
+        end
+      end
+  end
 
 end
