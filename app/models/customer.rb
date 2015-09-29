@@ -30,7 +30,11 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
   def self.to_csv(options = {})
       CSV.generate(options) do |csv|
         all.each do |customer|
-          csv << [customer.mobile_number] if customer.mobile_number.present?
+          if customer.mobile_number.present?
+            mobile_number = customer.mobile_number[1..-1]
+            mobile_number = "44#{mobile_number}"
+            csv << [mobile_number]
+          end
         end
       end
   end
