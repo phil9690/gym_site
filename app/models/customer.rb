@@ -2,7 +2,7 @@ class Customer < ActiveRecord::Base
 
   require 'csv'
 
-STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "email sent", "converted", "not now" ]
+STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "email sent", "converted", "not now", "spoken to" ]
 
   before_save { first_name.downcase! }
   before_save { last_name.downcase! }
@@ -10,8 +10,9 @@ STAFF_LOG = [ " ", "appointment made", "no answer", "blowout", "message left", "
   before_save { address_line_2.downcase! }
   before_save { address_line_2.downcase! }
 
-  validates :first_name, :last_name, :address_line_1, :post_code, presence: true
+  validates :first_name, :last_name, presence: true
   validates :mobile_number, length: { is: 11 }, allow_blank: :true
+  validates :post_code, length: { in: 5..7 }, allow_blank: :true
 
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
