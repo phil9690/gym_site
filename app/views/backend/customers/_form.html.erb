@@ -42,7 +42,7 @@
 <%= f.email_field :email %>
 
 <%= f.label :staff_log %>
-<%= f.select :staff_log, options_for_select(Customer::STAFF_LOG) %>
+<%= f.select :staff_log, options_for_select(Customer::STAFF_LOG, selected: @customer.staff_log) %>
 
 <%= f.label :notes %>
 <%= f.text_area :notes %>

@@ -15,7 +15,7 @@
 <%= f.date_field :appointment_date %>
 
 <%= f.label :appointment_time, "Appointment time" %>
-<%= f.time_field :appointment_time %>
+<%= f.time_field :appointment_time, value: @appointment.appointment_date.strftime("%H:%M") %>
 
 <%= f.hidden_field :user_id, :value => current_user.id %>
 
