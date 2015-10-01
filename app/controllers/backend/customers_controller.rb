@@ -60,6 +60,10 @@ class Backend::CustomersController < Backend::BackendController
     end
   end
 
+  def email_merge
+    @customers = Customer.all
+  end
+
   private
 
     def customer_params

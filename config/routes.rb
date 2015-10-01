@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post   'login'   => 'backend/sessions#create'
   delete 'logout'  => 'backend/sessions#destroy'
 
+  get 'backend/email-merge' => 'backend/customers#email_merge'
+
   get 'export-mobile', to: 'backend/customers#export_mobile', as: :backend_customers_export_mobile
 
   get 'export-email', to: 'backend/customers#export_email', as: :backend_customers_export_email
