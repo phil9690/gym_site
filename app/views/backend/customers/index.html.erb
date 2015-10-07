@@ -59,11 +59,13 @@
     </thead>
     <tbody>
     <% @customers.each do |customer| %>
+      <% unless customer.staff_log == "blowout" or customer.staff_log =="converted" %>
       <tr>
       <td><%= link_to "#{customer.last_name} #{customer.first_name}", backend_customer_path(customer) %></td>
       <td><%= customer_tel(customer) %></td>
       <td class="<%= appointment_time_indicator_customer(customer) %>"><%= customer.staff_log %></td>
     </tr>
+    <% end %>
   <% end %>
     </tbody>
   </table>

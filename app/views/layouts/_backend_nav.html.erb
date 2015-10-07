@@ -14,10 +14,12 @@
     <section class="top-bar-section">
       <% if logged_in? %>
       <ul class="right">
-        <li class=<%= "#{is_active('static_pages', 'home')}" %>><%= link_to "Home", root_path %></li>
-        <li class=<%= "#{is_active('customers', 'index')}" %>><%= link_to "Customers", backend_customers_path %></li>
-        <li class=<%= "#{is_active('static_pages', 'times')}" %>><%= link_to "Users", backend_users_path %></li>
-        <li class=<%= "#{is_active('static_pages', 'facilties')}" %>><%= link_to "Appointments", backend_appointments_path %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Customers", backend_customers_path %></li>
+        <li><%= link_to "Blowouts", backend_blowouts_path %></li>
+        <li><%= link_to "Conversions", backend_conversions_path %></li>
+        <li><%= link_to "Users", backend_users_path %></li>
+        <li><%= link_to "Appointments", backend_appointments_path %></li>
         <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
       </ul>
     <% end %>

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :appointments
 
   end
+  
+  get 'backend/blowouts' => 'backend/customers#blowout'
+  get 'backend/conversions' => 'backend/customers#conversion'
 
   get    'login'   => 'backend/sessions#new'
   post   'login'   => 'backend/sessions#create'

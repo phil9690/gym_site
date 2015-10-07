@@ -1,5 +1,7 @@
 <% @customers.each do |customer| %>
-  <%= "#{customer.email};" if customer.email.present? %>
+  <% unless customer.staff_log == "converted" %>
+    <%= "#{customer.email};" if customer.email.present? %>
+  <% end %>
 <% end %>
 
 

@@ -64,6 +64,14 @@ class Backend::CustomersController < Backend::BackendController
     @customers = Customer.all
   end
 
+  def blowout
+    @customers = Customer.where("staff_log = 'blowout'")
+  end
+
+  def conversion
+    @customers = Customer.where("staff_log = 'converted'")
+  end
+
   private
 
     def customer_params
