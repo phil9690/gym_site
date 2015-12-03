@@ -193,6 +193,26 @@ p, ul, li {
   }
 }
 
+.new-gym-alert {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  background: #1e88e5;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px solid #1976d2;
+  span {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .close {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+}
+
 .footer {
   padding: 0;
   background: $oil;
