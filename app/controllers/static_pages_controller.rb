@@ -24,4 +24,7 @@ class StaticPagesController < ApplicationController
   def personal_training
   end
 
+  def new_gym
+  end
+
 end

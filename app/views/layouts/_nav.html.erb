@@ -20,6 +20,7 @@
       <ul class="right">
         <li class=<%= "#{is_active('static_pages', 'home')}" %>><%= link_to "Home", root_path %></li>
         <li class=<%= "#{is_active('static_pages', 'membership')}" %>><%= link_to "Memberships", membership_path %></li>
+        <li class=<%= "#{is_active('static_pages', 'new_gym')}" %>><%= link_to "Our New Gym", new_gym_path %></li>
         <li class=<%= "#{is_active('static_pages', 'times')}" %>><%= link_to "Opening Times", opening_times_path %></li>
         <li class=<%= "#{is_active('static_pages', 'facilties')}" %>><%= link_to "Facilities", gym_facilities_path %></li>
         <li class="has-dropdown <%= "#{is_active('static_pages', 'classes')}" %>">
