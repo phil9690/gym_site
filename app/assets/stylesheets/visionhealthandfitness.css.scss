@@ -433,3 +433,12 @@ p, ul, li {
   }
 }
 
+.new-gym {
+  margin-top: 1rem;
+  .info {
+    p {
+      padding: 0.1rem;
+      margin: 0.1rem;
+    }
+  }
+}

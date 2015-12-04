@@ -27,4 +27,7 @@ class StaticPagesController < ApplicationController
   def new_gym
   end
 
+  def pre_sale_membership
+  end
+
 end

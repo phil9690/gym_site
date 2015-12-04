@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get 'gym-facilities' => 'static_pages#facilities'
   get 'classes/boxing' => 'static_pages#boxing'
   get 'new-gym' => 'static_pages#new_gym'
+  get 'pre-sale-memberships' => 'static_pages#pre_sale_memberships'
 
   get 'personal-training' => 'static_pages#personal_training'
 
