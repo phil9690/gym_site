@@ -23,12 +23,18 @@ en:
   contact_details:
     email: "memberships@visionhealthandfitness.co.uk"
     phone: "0191 447 6919"
+    address:
+      line_1: "Vision Health and Fitness Club"
+      line_2: "2 Sands Industrial Estate"
+      line_3: "Swalwell"
+      city: "Gateshead"
+      post_code: "NE16 3DJ"
 
   opening_hours:
-    monday:     "7:00 AM - 9:00 PM"
-    tuesday:    "7:00 AM - 9:00 PM"
-    wednesday:  "7:00 AM - 9:00 PM"
-    thursday:   "7:00 AM - 9:00 PM"
-    friday:     "7:00 AM - 9:00 PM"
-    saturday:   "8:00 AM - 5:00 PM"
-    sunday:     "9:00 AM - 2:00 PM"
+    monday:     "6:00 AM - 10:00 PM"
+    tuesday:    "6:00 AM - 10:00 PM"
+    wednesday:  "6:00 AM - 10:00 PM"
+    thursday:   "6:00 AM - 10:00 PM"
+    friday:     "6:00 AM - 10:00 PM"
+    saturday:   "8:00 AM - 8:00 PM"
+    sunday:     "8:00 AM - 8:00 PM"

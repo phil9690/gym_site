@@ -8,7 +8,7 @@
       <%= link_to "", "#", target: "_blank", class: "fi-social-google-plus" %>
       <%= link_to "", "https://twitter.com/vision_gym", target: "_blank", class: "fi-social-twitter" %>
     </div>
-    
+
   </div>
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
@@ -25,8 +25,24 @@
         <li class="has-dropdown <%= "#{is_active('static_pages', 'classes')}" %>">
         <%= link_to 'Classes', classes_path %>
         <ul class="dropdown">
+          <li class=<%= "#{is_active('static_pages', 'ab_solution')}" %>><%= link_to "Ab-solution", classes_ab_solution_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'bootcamp')}" %>><%= link_to "Bootcamp", classes_bootcamp_path %></li>
           <li class=<%= "#{is_active('static_pages', 'boxing')}" %>><%= link_to "Boxing", classes_boxing_path %></li>
-          <li class=<%= "#{is_active('static_pages', 'personal_training')}" %>><%= link_to "Personal Training", personal_training_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'circuit_training')}" %>><%= link_to "Circuit Training", classes_circuit_training_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'cycle_fit')}" %>><%= link_to "Cycle Fit", classes_cycle_fit_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'cycle_pump')}" %>><%= link_to "Cycle Pump", classes_cycle_pump_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'hiit')}" %>><%= link_to "HIIT", classes_hiit_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'kettle_x_fit')}" %>><%= link_to "Kettle X Fit", classes_kettle_x_fit_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'lbt')}" %>><%= link_to "L.B.T", classes_lbt_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'mma')}" %>><%= link_to "MMA", classes_mma_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'pilates')}" %>><%= link_to "Pilates", classes_pilates_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'pilates_hiit')}" %>><%= link_to "Pilates HIIT", classes_pilates_hiit_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'pumped')}" %>><%= link_to "Pumped", classes_pumped_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'rig_assault')}" %>><%= link_to "Rig Assault", classes_rig_assault_path %></li>
+          <li class=<%= "#{is_active('static_pages', 's_and_c')}" %>><%= link_to "S&C", classes_s_and_c_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'total_body')}" %>><%= link_to "Total Body", classes_total_body_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'trx')}" %>><%= link_to "TRX", classes_trx_path %></li>
+          <li class=<%= "#{is_active('static_pages', 'ultimate_endurance')}" %>><%= link_to "Ultimate Endurance", classes_ultimate_endurance_path %></li>
         </ul>
         </li>
         <li class=<%= "#{is_active('static_pages', 'contact')}" %>><%= link_to "Contact", contact_path %></li>
